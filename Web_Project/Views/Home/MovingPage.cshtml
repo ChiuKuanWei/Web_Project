@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="UTF-8" />
+    <title>動態網頁實作</title>
+    <!-- 呼叫jQuery Ajax 2.2.3 -->
+    <script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>    
+    <style type="text/css">
+        body {
+            background-color: #E0E0E0;
+        }
+
+        .table {
+            /* 調整外邊距，上下為0 左右為水平置中*/
+            margin: 0 auto;
+            /* 調整內距 左右距離*/
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: 微軟正黑體;
+            /*顯示為Table容器*/
+            display: table;
+            /* 邊框粗細 邊框樣式(實線) 邊框顏色 */
+            border: 7px solid #2FEDC1;
+            /*背景顏色*/
+            background-color: #FFD1A4;
+            /*容器高與寬設定*/
+            width: 50%;
+            height: 80%
+        }
+      
+       .color-red {
+            color: #BB3D00;           
+        }
+        .letter-spacing {
+            letter-spacing: 2px;
+        }       
+
+        .wrap {
+            /*顯示容器為Table*/
+            display: table;
+            /* 調整外邊距，上下為0 左右為水平置中*/
+            margin: 0 auto;
+        }
+
+        .nav {           
+            /*文字置中*/
+            text-align: center;
+        }
+
+            .nav ul {
+                /* 調整外邊距，上下為0 左右為水平置中*/
+                margin: 0 auto;
+                padding: 5px 0px; /*內距:上下邊 左右邊*/
+                /*背景顏色*/
+                background-color: #26C9A3;
+            }
+
+            .nav li {
+                display: inline-block; /*在同一行上*/
+                border-bottom: 7px solid #2FEDC1; /* 邊框粗細 邊框樣式(實線) 邊框顏色 */
+                font-weight: bold; /* 字體粗細:粗體字 */
+                color: white; /*字體顏色*/
+                padding: 10px; /*內距*/
+                padding-left: 20px; /*內左距*/
+                padding-right: 20px; /*內右距*/
+                font-family: 微軟正黑體; /*字體樣式*/
+                letter-spacing: 5px; /*字體間距*/
+                background-color: #26C9A3 /*背景顏色*/
+            }
+    </style>
+   
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>課程簡介</li>
+            <li>預計單元</li>
+            <li>常見問題</li>
+            <li>留言發問</li>
+        </ul>
+    </div>
+    <br />
+    <div class="table">
+        <h2 class="color-red">邱冠為 <span>(CHIU KUAN-WEI)</span></h2>
+        <h4 class="color-red letter-spacing">職業:軟體工程師</h4>
+        <hr />
+        <p class="color-red letter-spacing">
+            出生於西元1998年1月5日，出生地為新北市蘆洲區<br />
+            連絡電話:<a href="tel:+975876508">0975876508</a><br />
+            電子郵件:<a href="mailto:harry20040723@yahoo.com.tw">harry20040723@yahoo.com.tw</a><br />
+            履歷表:<a href="https://pda.104.com.tw/profile/preview?vno=75nmh350t" target="_blank">阿為的104履歷表</a>
+        </p>
+    </div>
+
+</body>
+</html >

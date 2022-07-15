@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="UTF-8" />   <!--文字為UTF-8--> 
+    <title>Display普通表格</title>
+    <style type="text/css">
+        body {
+            background-color: pink;
+        }
+
+        .table {
+            /* 調整外邊距，上下為0 左右為水平置中*/            
+            margin:0 auto;
+            /* 調整內距，四個邊同樣的值 */
+            padding: 0;
+            /*字體大小*/
+            font-size: 14px;
+            /*字體樣式*/
+            font-family: 微軟正黑體;
+            /*顯示容器為Table*/
+            display: table;
+            /*此容器的寬度*/
+            width: 50%;
+            /* 用来决定表格的邊框是分開(separate)的還是合併(collapse)的 */
+            border-collapse: collapse;
+        }
+
+        .table-tr {
+            /*顯示為列*/
+            display: table-row;
+            /*當前列的高度*/
+            height: 30px;
+        }
+
+        .table-th {
+            /*顯示為儲存格*/
+            display: table-cell;
+            /* 字體粗細:粗體字 */
+            font-weight: bold;
+            /* 邊框粗細 邊框樣式(實線) 邊框顏色 */
+            border: 1px solid black;
+            /* 文字置中 */
+            text-align: center;
+            /* 垂直置中 */
+            vertical-align: middle;
+            /*此儲存格背景顏色*/
+            background-color: #E5E5E5;
+        }
+
+        .table-td {
+            /*顯示為儲存格*/
+            display: table-cell;
+            /* 邊框粗細 邊框樣式(實線) 邊框顏色 */
+            border: 1px solid black;
+            /* 文字置中 */
+            text-align: center;
+            /* 垂直置中 */
+            vertical-align: middle;
+        }
+
+        .wrap {
+            /*顯示容器為Table*/
+            display: table;
+            /* 調整外邊距，上下為0 左右為水平置中*/
+            margin: 0 auto;
+        }
+
+        .nav {    
+            /*文字置中*/
+            text-align: center;
+        }
+
+            .nav ul {
+                /* 調整外邊距，上下為0 左右為水平置中*/
+                margin: 0 auto;
+            }
+
+            .nav li {
+                display: inline-block; /*在同一行上*/
+                border: 1px solid black; /* 邊框粗細 邊框樣式(實線) 邊框顏色 */
+                border-radius: 5px; /*邊框角落圓角型*/
+                padding: 5px; /*內距*/
+                padding-left: 20px; /*內左距*/
+                padding-right: 20px; /*內右距*/
+                font-family: 微軟正黑體; /*字體樣式*/
+                letter-spacing: 5px; /*字體間距*/
+                background-color: #FF5809  /*背景顏色*/
+            }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; font-family: 微軟正黑體;">
+        <h1>TEST1<br /> Hello World!</h1>
+    </div>
+    <div style="text-align: center; font-family: 微軟正黑體;">
+        <b>1.區域分布&nbsp;</b>
+        <b>2.GDP數據&nbsp;</b>
+        <b>3.增長率計算</b>
+    </div>
+
+    <hr />
+
+    <ul class="wrap">  <!--˙項目-->
+        <li>first item</li>
+        <li>second item
+             <ol>  <!--數字編號-->
+                  <li>second item first subitem</li>
+                  <li>second item second subitem</li>
+                  <li>second item third subitem</li>
+             </ol>
+        </li>
+        <li>third item</li>
+    </ul>    
+
+    <hr />
+   
+    <div class="nav">
+        <ul>
+            <li >首頁</li>
+            <li >簡介</li>
+            <li >作品</li>
+            <li >聯絡方式</li>
+        </ul>
+    </div>
+      
+    <hr />
+
+    <div class="table">
+        <div class="table-tr">
+            <div class="table-th">縣市/區</div>
+            <div class="table-th">GDP(億)</div>
+            <div class="table-th">增長率</div>
+        </div>
+        <div class="table-tr">
+            <div class="table-td">台北/信義區</div>
+            <div class="table-td">75812</div>
+            <div class="table-td">7.0%</div>
+        </div>
+        <div class="table-tr">
+            <div class="table-td">台南/埔里區</div>
+            <div class="table-td">37010</div>
+            <div class="table-td">8.3%</div>
+        </div>
+        <div class="table-tr">
+            <div class="table-td">新北/蘆洲區</div>
+            <div class="table-td">70116</div>
+            <div class="table-td">8.5%</div>
+        </div>
+    </div>
+</body>
+</html>
