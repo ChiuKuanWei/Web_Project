@@ -17,7 +17,7 @@ namespace Web_Project
                 namespaces: new[] { "Web_Project.Controllers" },
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "MovingPage", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "MyCard_HW1", id = UrlParameter.Optional }
             );
         }
     }

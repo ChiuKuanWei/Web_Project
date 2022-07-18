@@ -1,0 +1,143 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="UTF-8"/>
+    <title>Css定位功能</title>
+    <style type="text/css">
+        body {
+            height: 2000px;
+            font-family: 微軟正黑體;
+        }
+
+        .div {
+            border: solid 3px black;
+            display:table;
+            width: 150px;
+            height: 100px;
+        }
+
+        .static {
+            position: static;
+            left: 30px;
+            width: 300px;
+            height: 200px;
+        }
+
+        .relative {
+            position: relative;
+            margin: auto;
+            /*left: 30px;*/
+            font-size: small;
+            width: 300px;
+            height: 200px;
+        }
+
+        .absolute1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            font-size: small;
+            width: 250px;
+            height: 150px;
+        }
+
+        .absolute2 {
+            width: 200px;
+            height: 100px;
+        }
+
+        .absolute3 {
+            width: 150px;
+            height: 50px;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            font-size: small;
+            width: 300px;
+            height: 200px;
+            /* right: 100px;
+            top: 300px;*/
+        }
+
+        .nav {
+            /*文字置中*/
+            text-align: center;
+            border: solid 3px black;
+            display: table;
+            width: 300px;
+            height: 200px;
+            position: fixed;
+            top: 20px;            
+            left: 10px;
+
+        }
+
+            .nav ul {               
+                padding: 0px 20px; /*內距:上下邊 左右邊*/
+            }
+
+            .nav li {
+                display: block; /*單獨一個區塊*/
+                border: solid 3px black;
+                font-weight: bold; /*字體粗細:粗體字*/
+                color: black; /*字體顏色*/
+                font-family: 微軟正黑體; /*字體樣式*/
+                letter-spacing: 5px; /*字體間距 */
+                padding: 10px; /*4邊內距*/
+                margin: 5% auto; /*上下邊 左右邊*/
+            }
+    </style>
+</head>
+<body>
+    <h3 style="text-align:center;">CSS定位方式</h3>
+    <!--相對位置範例-->
+    <div class="relative div">
+        <span>測試1!!</span>
+        <div class="absolute1 div">
+            <span>測試2!!</span>
+            <div class="absolute1 absolute2 div">
+                <span>測試3!!</span>
+                <div class="absolute1 absolute3 div">
+                    <span>測試4!!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--固定位置範例-->
+    <div class="fixed div">
+        <span>這是廣告</span>
+        <div class="absolute1 div">
+            <span>測試1!!</span>
+            <div class="absolute1 absolute2 div">
+                <span>測試2!!</span>
+                <div class="absolute1 absolute3 div">
+                    <span>測試3!!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br />
+
+    <div class="nav">
+        <ul>
+            <li>課程簡介</li>
+            <li>預計單元</li>
+            <li>常見問題</li>
+            <li>留言發問</li>
+        </ul>
+    </div>
+</body>
+</html>

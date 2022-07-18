@@ -1,0 +1,154 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="UTF-8"/>
+    <title>個人名片</title>
+    <style type="text/css">
+
+       /*設定為整頁模式*/
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            position: relative;
+            background-color: #d1d1d1;
+            font-family: 微軟正黑體;
+            color: #5c4f74;
+            border-top: 25px solid #a64942;
+            border-bottom: 25px solid #a64942;
+            box-sizing: border-box; /*框線不占體積往內縮，將它的框線體積算在本體之內*/
+        }
+
+        .table {
+            display: table;
+            /*垂直水平置中*/
+            /*---------------------------------*/
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            /*---------------------------------*/
+            padding: 0px 10px;
+            background-color: #eee;
+            opacity: 0.9; /*透明度*/
+            letter-spacing: 1px;
+            width: 400px;
+            height: 250px;
+            border: 1px solid rgba(0,0,0,0.15);
+            border-radius: 6px;
+            overflow: hidden;
+            /*overflow: auto;預設會自動使用捲軸。
+              overflow:visible;顯示的文字或圖片會直接超出範圍，不使用捲軸。 
+              overflow:hidden;自動隱藏超出的文字或圖片。 
+              overflow:scroll;自動產生捲軸。 
+              overflow:inherit;繼承自父元素的可見性 */
+            box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.2);
+            /*box-shadow為外框陰影效果*/
+            /*h-offset ：(必須值）水平位移，不能使用百分比
+              v-offset ：(必須值）垂直位移，不能使用百分比
+              blur ：陰影模糊程度，不能接收負值，不能使用百分比
+              spread ：陰影擴散程度，不能使用百分比
+              color ：顏色，沒有設定就繼承父元素*/
+        }
+
+            .table h2 {
+                font-size: 25px;
+                font-weight: 800;
+            }
+            .table span {
+                font-size: 13px;
+            }
+            .table h4 {
+                font-weight: 800;
+            }
+            .table p {
+                font-size: 15px;
+                line-height: 22px;
+                color: #666;
+            }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            position: absolute;
+            /*border: 1px solid black;*/
+        }
+
+        .circle1 {
+            right: 90px;
+            bottom: -70px;
+            background-color: #f24;
+        }
+
+        .circle2 {
+            width: 60px;
+            height: 60px;
+            right: -20px;
+            top: -20px;
+            background-color: #20366b;
+            /*border: solid 3px #20366b;*/
+        }      
+
+        .watermark {
+            position: absolute;            
+            font-size: 300px;
+            left:100px;
+            bottom: 300px;
+            opacity: 0.7; /*透明度*/
+            transform: rotate(-10deg); /*元件翻轉*/
+        }
+
+        .circle3 {
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            background-color: #E9AC5A;
+            left: 5%;
+            top: 10px;
+        }
+
+        .triangle {
+            position: absolute;
+            border-right: 200px solid transparent;
+            border-left: 200px solid transparent;
+            border-bottom: 250px solid #3DAC5A;
+            display: inline-block;
+            right: 5%;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle3"></div>
+    <div class="triangle"></div>
+
+    <div class="watermark">NAMECARD</div>
+
+    <div class="table">
+        <h2>邱冠為 <span>(CHIU KUAN-WEI)</span></h2>
+        <h4>職業:軟體工程師</h4>
+        <hr style="border: 1px solid #a64942; " />
+        <p>
+            畢業於亞東科技大學電子工程系<br />
+            興趣:聚會 打電動 運動 學習新事物<br />
+            對於網頁製作有極大的興趣，希望未來可以成為一個網頁製作工程師!!
+        </p>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+    </div>
+
+</body>
+</html>

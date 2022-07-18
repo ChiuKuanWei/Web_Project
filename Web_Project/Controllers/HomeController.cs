@@ -31,7 +31,18 @@ namespace Web_Project.Controllers
         {
             return View();
         }
-        public ActionResult MovingPage()
+
+        public ActionResult MyCardPage()
+        {
+            return View();
+        }
+
+        public ActionResult CssPosition()
+        {
+            return View();
+        }
+
+        public ActionResult MyCard_HW1()
         {
             return View();
         }

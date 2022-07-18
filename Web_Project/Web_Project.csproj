@@ -163,7 +163,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DataTable_Create.cshtml" />
-    <Content Include="Views\Home\MovingPage.cshtml" />
+    <Content Include="Views\Home\MyCardPage.cshtml" />
+    <Content Include="Views\Home\CssPosition.cshtml" />
+    <Content Include="Views\Home\MyCard_HW1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
