@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "CreateData";
+}
+
+<h2>CreateData</h2>
+<br />
+
+@*Bootstrap表單範例--> https://getbootstrap.com/docs/5.0/forms/form-control/*@
+
+<form method="post" action="/Home/CreateData">
+    @*在表單中最重要的就是各個 input 的 name 屬性，當資料傳送的時候，會使用 name 做為資料的欄位名稱。
+      因此這邊的 name 一定要能和我們的 card 物件的資料對應上，才能讓它自動轉換。*@
+    <div class="form-group row">
+        <label for="User_Name" class="col-sm-2">客戶用戶名</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Name" name="User_Name" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Birth" class="col-sm-2">客戶出生日</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Birth" name="User_Birth" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Mail" class="col-sm-2">客戶電子郵件</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Mail" name="User_Mail" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Card" class="col-sm-2">客戶身分證</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Card" name="User_Card" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Account" class="col-sm-2">客戶帳號</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Account" name="User_Account" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Password" class="col-sm-2">客戶密碼</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Password" name="User_Password" class="form-control" />
+        </div>
+    </div>
+
+    <input class="btn btn-default" type="submit" value="新增" />
+</form>

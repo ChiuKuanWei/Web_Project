@@ -1,0 +1,43 @@
+﻿@using Web_Project.Models;
+
+@{
+    List<MyWeb> _MyWebs = ViewBag.MyWeb;
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>客戶編號</th>
+            <th>客戶用戶名</th>
+            <th>客戶出生日</th>
+            <th>客戶電子郵件</th>
+            <th>客戶身分證</th>
+            <th>客戶帳號</th>
+            <th>客戶密碼</th>
+            <th>客戶建立時間</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i=0; i < _MyWebs.Count; i++)
+        {
+        <tr>
+            <th scope="row">@(i+1)</th>
+            <td>@_MyWebs[i].User_Name</td>
+            <td>@_MyWebs[i].User_Birth</td>
+            <td>@_MyWebs[i].User_Mail</td>
+            <td>@_MyWebs[i].User_Card</td>
+            <td>@_MyWebs[i].User_Account</td>
+            <td>@_MyWebs[i].User_Password</td>
+            <td>@_MyWebs[i].User_CreateTime</td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("新增資料", "CreateData")
+</p>
+
