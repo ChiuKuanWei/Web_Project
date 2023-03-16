@@ -168,6 +168,7 @@
     <Content Include="Views\Home\FormLogin.cshtml" />
     <Content Include="Views\Home\FormRegister.cshtml" />
     <Content Include="Views\Home\CreateData.cshtml" />
+    <Content Include="Views\Home\EditData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

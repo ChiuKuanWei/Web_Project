@@ -4,6 +4,9 @@
     List<MyWeb> _MyWebs = ViewBag.MyWeb;
 }
 
+<h1>@ViewBag.Message</h1>
+<br />
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -20,18 +23,19 @@
     </thead>
     <tbody>
 
-        @for (int i=0; i < _MyWebs.Count; i++)
+        @for (int i = 0; i < _MyWebs.Count; i++)
         {
-        <tr>
-            <th scope="row">@(i+1)</th>
-            <td>@_MyWebs[i].User_Name</td>
-            <td>@_MyWebs[i].User_Birth</td>
-            <td>@_MyWebs[i].User_Mail</td>
-            <td>@_MyWebs[i].User_Card</td>
-            <td>@_MyWebs[i].User_Account</td>
-            <td>@_MyWebs[i].User_Password</td>
-            <td>@_MyWebs[i].User_CreateTime</td>
-        </tr>
+            <tr>
+                <td scope="row">@(i+1)</td>
+                <td>@_MyWebs[i].User_Name</td>
+                <td>@_MyWebs[i].User_Birth</td>
+                <td>@_MyWebs[i].User_Mail</td>
+                <td>@_MyWebs[i].User_Card</td>
+                <td>@_MyWebs[i].User_Account</td>
+                <td>@_MyWebs[i].User_Password</td>
+                <td>@_MyWebs[i].User_CreateTime</td>
+                <td>@Html.ActionLink("編輯", "EditData", new { sUser_CreateTime = _MyWebs[i].User_CreateTime })</td>
+            </tr>
         }
 
     </tbody>

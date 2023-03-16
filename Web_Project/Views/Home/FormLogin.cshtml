@@ -47,7 +47,7 @@
         }
 
         .button-style {
-            width: 50%;
+            width: 20%;
             font-size: large;
             background-color: #3A98B9;
             color: white;
@@ -70,8 +70,8 @@
         <label for="password">密碼:</label>  
         <input style="height:30px" type="password" id="password" ><br />
         <div style="display: flex; flex-direction: row; justify-content:center;">
-            <input class="button-style" type="button" onclick="redirectToControllerAction()" value="登入" />&nbsp;
-            <input class="button-style" type="button" value="註冊" />
+            <input style="margin-right: 20px;" class="button-style" type="button" onclick="redirectToControllerAction()" value="登入" />
+            <input class="button-style" type="button" onclick="window.location.href = '../Home/FormRegister'" value="註冊" />
         </div>
         
         <p class="right-bottom">當前時間是: <span id="GetTime"></span></p>
@@ -125,7 +125,7 @@
                 document.getElementById("password").focus();
                 return;
             }
-            window.location.href = '../Home/Index';
+            window.location.href = '../Home/SelectData';
         }
 
     </script>

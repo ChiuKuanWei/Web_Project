@@ -1,0 +1,64 @@
+﻿@*用 @model 告知程式傳遞的是哪個 model的資料內容*@
+@model Web_Project.Models.MyWeb
+
+@{
+    ViewBag.Title = "編輯資料";
+}
+
+<h2>編輯資料</h2>
+<br />
+
+<form method="post" action="/Home/EditData">
+    @*在表單中最重要的就是各個 input 的 name 屬性，當資料傳送的時候，會使用 name 做為資料的欄位名稱。
+        因此這邊的 name 一定要能和我們的 MyWeb 物件的資料對應上，才能讓它自動轉換。*@
+    <div class="form-group row">
+        <label for="User_Name" class="col-sm-2">客戶用戶名</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Name" name="User_Name" class="form-control" value="@Model.User_Name" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Birth" class="col-sm-2">客戶出生日</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Birth" name="User_Birth" class="form-control" value="@Model.User_Birth" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Mail" class="col-sm-2">客戶電子郵件</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Mail" name="User_Mail" class="form-control" value="@Model.User_Mail" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Card" class="col-sm-2">客戶身分證</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Card" name="User_Card" class="form-control" value="@Model.User_Card" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Account" class="col-sm-2">客戶帳號</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Account" name="User_Account" class="form-control" value="@Model.User_Account" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_Password" class="col-sm-2">客戶密碼</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_Password" name="User_Password" class="form-control" value="@Model.User_Password" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="User_CreateTime" class="col-sm-2">客戶建立時間</label>
+        <div class="col-sm-10">
+            <input type="text" id="User_CreateTime" name="User_CreateTime" class="form-control" value="@Model.User_CreateTime" readonly/>
+        </div>
+    </div>
+
+    <input class="btn btn-default" type="submit" value="變更" />
+</form>

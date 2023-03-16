@@ -11,16 +11,16 @@ namespace Web_Project.Controllers
     {
         public ActionResult SelectData()
         {
-            try
+
+            SQLData _SQLData = new SQLData();
+            List<MyWeb> _MyWebs = _SQLData.GetDatas();
+            if (_MyWebs.Count == 0)
             {
-                SQLData _SQLData = new SQLData();
-                List<MyWeb> _MyWebs = _SQLData.GetDatas();
-                ViewBag.MyWeb = _MyWebs;
+                ViewBag.Message = "查無資料!";
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }           
+
+            ViewBag.MyWeb = _MyWebs;
+
             return View();
         }
 
@@ -40,10 +40,34 @@ namespace Web_Project.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                
             }
             return RedirectToAction("SelectData");
-        }      
+        }
+
+        public ActionResult EditData(string sUser_CreateTime)
+        {
+            SQLData _SQLData = new SQLData();
+            MyWeb _myweb = _SQLData.GetData(sUser_CreateTime);
+            //將回傳的 MyWeb 用傳遞 model 的方式傳到 View
+            return View(_myweb);
+        }
+
+        [HttpPost]
+        public ActionResult EditData(MyWeb _MyWeb)
+        {
+            try
+            {
+                SQLData _SQLData = new SQLData();
+                _SQLData.UpdateData(_MyWeb);
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return RedirectToAction("SelectData");
+        }
 
         public ActionResult FormLogin()
         {
