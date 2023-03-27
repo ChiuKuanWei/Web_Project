@@ -1,47 +1,79 @@
 ﻿@using Web_Project.Models;
 
+@*
+在 ASP.NET MVC 中，@ 符號是 Razor 語法的開始符號。它可以用於輸出、設置屬性、呼叫方法、建立區塊等多種用途。
+
+以下是一些 @ 符號在 Razor 語法中的用途：
+@Model: 用於輸出 Model 物件。
+@ViewBag: 用於輸出 ViewBag 中的資料。
+@Html: 用於呼叫 HTML Helper 方法，例如 @Html.ActionLink()。
+@if: 用於建立條件判斷式。
+@foreach: 用於建立迴圈。
+*@
+
 @{
-    List<MyWeb> _MyWebs = ViewBag.MyWeb;
-}
+    List<MyWeb>
+    _MyWebs = ViewBag.MyWeb;
+    }
 
-<h1>@ViewBag.Message</h1>
-<br />
+    @if (@ViewBag.Message != null)
+    {
+        <script>
+        var Message = @Html.Raw(Json.Encode(@ViewBag.Message.ToString()));
+        alert(Message);
+        </script>
+    }
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>客戶編號</th>
-            <th>客戶用戶名</th>
-            <th>客戶出生日</th>
-            <th>客戶電子郵件</th>
-            <th>客戶身分證</th>
-            <th>客戶帳號</th>
-            <th>客戶密碼</th>
-            <th>客戶建立時間</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @for (int i = 0; i < _MyWebs.Count; i++)
-        {
+    <table class="table table-hover">
+        <thead>
             <tr>
-                <td scope="row">@(i+1)</td>
-                <td>@_MyWebs[i].User_Name</td>
-                <td>@_MyWebs[i].User_Birth</td>
-                <td>@_MyWebs[i].User_Mail</td>
-                <td>@_MyWebs[i].User_Card</td>
-                <td>@_MyWebs[i].User_Account</td>
-                <td>@_MyWebs[i].User_Password</td>
-                <td>@_MyWebs[i].User_CreateTime</td>
-                <td>@Html.ActionLink("編輯", "EditData", new { sUser_CreateTime = _MyWebs[i].User_CreateTime })</td>
+                <th>客戶編號</th>
+                <th>客戶用戶名</th>
+                <th>客戶出生日</th>
+                <th>客戶電子郵件</th>
+                <th>客戶身分證</th>
+                <th>客戶帳號</th>
+                <th>客戶密碼</th>
+                <th>客戶建立時間</th>
+                <th></th>
             </tr>
-        }
+        </thead>
+        <tbody>
 
-    </tbody>
-</table>
+            @for (int i = 0; i < _MyWebs.Count; i++)
+            {
+                <tr>
+                    <td scope="row">@(i+1)</td>
+                    <td>@_MyWebs[i].User_Name</td>
+                    <td>@_MyWebs[i].User_Birth</td>
+                    <td>@_MyWebs[i].User_Mail</td>
+                    <td>@_MyWebs[i].User_Card</td>
+                    <td>@_MyWebs[i].User_Account</td>
+                    <td>@_MyWebs[i].User_Password</td>
+                    <td>@_MyWebs[i].User_CreateTime</td>
+                    <td>
+                        @Html.ActionLink("編輯", "EditData", new { sUser_CreateTime = _MyWebs[i].User_CreateTime })
+                        ｜
+                        @Html.ActionLink("刪除", "DeleteData", "Home", new { sUser_CreateTime = _MyWebs[i].User_CreateTime }, new { onclick = "return confirm('確定要刪除此項目嗎？');" })
+                    </td>
+                </tr>
+            }
 
-<p>
-    @Html.ActionLink("新增資料", "CreateData")
-</p>
+        </tbody>
+    </table>
+
+    <p>
+        @Html.ActionLink("新增資料", "CreateData")
+    </p>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <script>
+    //我們使用 Json.Encode 方法將錯誤訊息轉換成 JSON 格式的字串。Html.Raw 方法可以讓我們直接將字串輸出到 HTML 中，而不會被 Razor 引擎轉義。
+    //最後使用 alert 函式顯示錯誤訊息。
+        var errorMessage = @Html.Raw(Json.Encode(TempData["ErrorMessage"].ToString()));
+        alert(errorMessage);
+        </script>
+    }
+
 

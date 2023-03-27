@@ -128,5 +128,21 @@ namespace Web_Project.Models
                 _sqlconn.Close();
             }
         }
+
+        public void DeleteData(string sUser_CreateTime)
+        {
+            string sCMD = @"Delete From [MyWeb_DB].[dbo].[FormLogin] where [User_CreateTime] = @User_CreateTime";
+
+            using (SqlConnection _sqlconn = new SqlConnection(_sqlConn))
+            {
+                _sqlconn.Open();
+                using (SqlCommand cmd = new SqlCommand(sCMD, _sqlconn))
+                {
+                    cmd.Parameters.AddWithValue("@User_CreateTime", sUser_CreateTime);
+                    cmd.ExecuteNonQuery();
+                }
+                _sqlconn.Close();
+            }
+        }
     }
 }

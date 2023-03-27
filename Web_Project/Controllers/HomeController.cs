@@ -11,7 +11,6 @@ namespace Web_Project.Controllers
     {
         public ActionResult SelectData()
         {
-
             SQLData _SQLData = new SQLData();
             List<MyWeb> _MyWebs = _SQLData.GetDatas();
             if (_MyWebs.Count == 0)
@@ -20,7 +19,6 @@ namespace Web_Project.Controllers
             }
 
             ViewBag.MyWeb = _MyWebs;
-
             return View();
         }
 
@@ -66,6 +64,21 @@ namespace Web_Project.Controllers
             {
                 
             }
+            return RedirectToAction("SelectData");
+        }
+
+        public ActionResult DeleteData(string sUser_CreateTime)
+        {
+            try
+            {
+                SQLData _SQLData = new SQLData();
+                _SQLData.DeleteData(sUser_CreateTime);
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = "刪除錯誤：" + ex.Message;
+            }
+           
             return RedirectToAction("SelectData");
         }
 
