@@ -38,8 +38,9 @@ namespace Web_Project.Controllers
             }
             catch (Exception ex)
             {
-                
+                TempData["ErrorMessage"] = "新增錯誤：" + ex.Message;
             }
+
             return RedirectToAction("SelectData");
         }
 
@@ -62,8 +63,9 @@ namespace Web_Project.Controllers
             }
             catch (Exception ex)
             {
-                
+                TempData["ErrorMessage"] = "編輯錯誤：" + ex.Message;
             }
+
             return RedirectToAction("SelectData");
         }
 

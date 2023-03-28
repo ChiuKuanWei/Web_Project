@@ -119,7 +119,7 @@
                 document.getElementById("useraccount").focus();
                 return;
             }
-            else if (document.getElementById("password").value == '')
+            else if (document.getElementById("password").value.trim() == '')
             {
                 alert('請輸入密碼');
                 document.getElementById("password").focus();

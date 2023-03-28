@@ -3,14 +3,25 @@
     ViewBag.Title = "新增資料";
 }
 
-<h2>新增資料</h2>
-<br />
+
 
 @*Bootstrap表單範例--> https://getbootstrap.com/docs/5.0/forms/form-control/*@
 
+@if (TempData["CreateErrorMessage"] != null)
+{
+    <script>
+    //我們使用 Json.Encode 方法將錯誤訊息轉換成 JSON 格式的字串。Html.Raw 方法可以讓我們直接將字串輸出到 HTML 中，而不會被 Razor 引擎轉義。
+    //最後使用 alert 函式顯示錯誤訊息。
+        var errorMessage = @Html.Raw(Json.Encode(TempData["CreateErrorMessage"].ToString()));
+        alert(errorMessage);
+    </script>
+}
+
 <form method="post" action="/Home/CreateData">
     @*在表單中最重要的就是各個 input 的 name 屬性，當資料傳送的時候，會使用 name 做為資料的欄位名稱。
-      因此這邊的 name 一定要能和我們的 MyWeb 物件的資料對應上，才能讓它自動轉換。*@
+        因此這邊的 name 一定要能和我們的 MyWeb 物件的資料對應上，才能讓它自動轉換。*@
+    <h2>@ViewBag.Title</h2>
+    <br />
     <div class="form-group row">
         <label for="User_Name" class="col-sm-2">客戶用戶名</label>
         <div class="col-sm-10">
