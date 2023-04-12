@@ -7,12 +7,12 @@
 
 @*Bootstrap表單範例--> https://getbootstrap.com/docs/5.0/forms/form-control/*@
 
-@if (TempData["CreateErrorMessage"] != null)
+@if (TempData["ErrorMessage"] != null)
 {
     <script>
     //我們使用 Json.Encode 方法將錯誤訊息轉換成 JSON 格式的字串。Html.Raw 方法可以讓我們直接將字串輸出到 HTML 中，而不會被 Razor 引擎轉義。
     //最後使用 alert 函式顯示錯誤訊息。
-        var errorMessage = @Html.Raw(Json.Encode(TempData["CreateErrorMessage"].ToString()));
+        var errorMessage = @Html.Raw(Json.Encode(TempData["ErrorMessage"].ToString()));
         alert(errorMessage);
     </script>
 }

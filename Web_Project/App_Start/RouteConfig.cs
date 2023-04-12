@@ -16,7 +16,7 @@ namespace Web_Project
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "FormLogin", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "LineNotify_View", id = UrlParameter.Optional }
             );
         }
     }
